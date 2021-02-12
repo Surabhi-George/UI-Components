@@ -1,0 +1,12 @@
+<div class="uc-tabs">
+    <ul>
+        <li *ngFor="let data of tabs; let i = index;">
+            <a [ngClass]="{'active': view_tab === 'tab_'+i}" (click)="changeTab('tab_'+i)">{{data.name}}</a>
+        </li>
+    </ul>
+    <div>
+        <div *ngFor="let data of tabs; let i = index;">
+            <p *ngIf="view_tab == 'tab_'+i">{{data.data}}</p>
+        </div>
+    </div>
+</div>
